@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Grid xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-              HeightRequest="48" 
-              xmlns:local="clr-namespace:Pollux.Converters"
+             xmlns:converters="clr-namespace:ScrollApp.Converters;assembly=ScrollApp"
+             HeightRequest="48"
              FlexLayout.Basis="100%"
             Padding="20,0,20,0"
-             x:Class="Pollux.Templates.SongWithAlbumCoverTemplate">
+             x:Class="ScrollApp.Templates.SongWithAlbumCoverTemplate">
     <Grid.Resources>
         <ResourceDictionary>
-            <local:SecondsToMinutesConverter x:Key="secondsToMinute" />
+            <converters:SecondsToMinutesConverter x:Key="secondsToMinute" />
         </ResourceDictionary>
     </Grid.Resources>
     <Grid.ColumnDefinitions>

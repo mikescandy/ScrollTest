@@ -1,8 +1,8 @@
-﻿using Pollux.ViewModels;
+﻿using ScrollApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Pollux.Templates
+namespace ScrollApp.Templates
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AlternateAlbumTemplate : Frame

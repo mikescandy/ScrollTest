@@ -1,10 +1,8 @@
-﻿using Pollux.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using ScrollApp.ViewModels;
 using Xamarin.Forms;
 
-namespace Pollux.Templates
+namespace ScrollApp.Templates.Selectors
 {
     public class ArtistDataTemplateSelector : DataTemplateSelector
     {

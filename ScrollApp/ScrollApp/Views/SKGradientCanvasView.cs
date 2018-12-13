@@ -1,8 +1,7 @@
 ﻿using SkiaSharp;
 using SkiaSharp.Views.Forms;
-using System.IO;
 
-namespace Pollux.Views
+namespace ScrollApp.Views
 {
     public class SKGradientCanvasView : SKCanvasView
     {

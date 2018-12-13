@@ -1,9 +1,4 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
-using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Prism.Navigation;
 
 namespace ScrollApp.ViewModels
 {
@@ -12,23 +7,12 @@ namespace ScrollApp.ViewModels
         public LoginPageViewModel(INavigationService navigationService)
             :base(navigationService)
         {
-
         }
 
-        //public override void OnNavigatedTo(INavigationParameters parameters)
-        //{
-        //    // this simulates autologin
-        //    NavigationService.NavigateAsync("../HomePage");
-
-
-        //}
-
-        public override void OnNavigatingTo(INavigationParameters parameters)
+        public override void OnNavigatedTo(INavigationParameters parameters)
         {
             // this simulates autologin
-            NavigationService.NavigateAsync("NavigationPage/HomePage");
-
-
+            NavigationService.NavigateAsync("../HomePage");
         }
     }
 }

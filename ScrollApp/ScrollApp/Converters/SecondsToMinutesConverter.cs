@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 using Xamarin.Forms;
 
-namespace Pollux.Converters
+namespace ScrollApp.Converters
 {
     public class SecondsToMinutesConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value ==null)
-            {
-                return "";
-            }
-            int seconds = (int)value;
+            if (value == null) return "";
+            var seconds = (int) value;
             var timespan = TimeSpan.FromSeconds(seconds);
             return timespan.ToString(@"mm\:ss");
         }

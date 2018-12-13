@@ -6,7 +6,8 @@
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <Label Text="Welcome to Xamarin Forms and Prism!" />
-        <Button Text="Go to Flex page" Command="{Binding OpenFlexPageCommand}" />
+        <Button Text="Go to Flex page modal" Command="{Binding OpenFlexPageModalCommand}" />
+        <Button Text="Go to Flex page non modal" Command="{Binding OpenFlexPageCommand}" />
         <CollectionView x:Name="RecentArtists"  ItemsSource="{Binding  Artists}" VerticalOptions="Start" HeightRequest="160" ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" >
             <CollectionView.ItemTemplate >
                 <DataTemplate >

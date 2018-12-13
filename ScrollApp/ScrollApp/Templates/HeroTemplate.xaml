@@ -1,16 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Grid
-     xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:views="clr-namespace:Pollux.Views"
-    x:Class="Pollux.Templates.HeroTemplate"
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:ScrollApp.Views;assembly=ScrollApp"
+    x:Class="ScrollApp.Templates.HeroTemplate"
     HeightRequest="250" HorizontalOptions="FillAndExpand" VerticalOptions="Start"
     x:Name="ScaleContainer"
     IsClippedToBounds="True"
-    FlexLayout.Basis="100%"
-    >
+    FlexLayout.Basis="100%">
     <Image  HeightRequest="250" WidthRequest="250" Source = "{Binding ImageUrl}"  Aspect="AspectFill"   VerticalOptions="Start"/>
     <views:SKGradientCanvasView HeightRequest="250" VerticalOptions="Start"  />
     <Label  Margin="20,-90,0,28" Text="{Binding Text}"  FontSize="40" FontFamily="Montserrat-Bold.ttf#Montserrat-Bold" TextColor="White" VerticalOptions="EndAndExpand" LineBreakMode="WordWrap"  />
-
 </Grid>

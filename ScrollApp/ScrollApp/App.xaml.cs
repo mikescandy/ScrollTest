@@ -24,6 +24,8 @@ namespace ScrollApp
             InitializeComponent();
 
             await NavigationService.NavigateAsync("NavigationPage/LoginPage");
+            //await NavigationService.NavigateAsync("FlexPage");
+
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
