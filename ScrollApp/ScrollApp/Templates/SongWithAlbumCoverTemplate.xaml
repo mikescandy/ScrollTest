@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              HeightRequest="48" 
+              xmlns:local="clr-namespace:Pollux.Converters"
+             FlexLayout.Basis="100%"
+            Padding="20,0,20,0"
+             x:Class="Pollux.Templates.SongWithAlbumCoverTemplate">
+    <Grid.Resources>
+        <ResourceDictionary>
+            <local:SecondsToMinutesConverter x:Key="secondsToMinute" />
+        </ResourceDictionary>
+    </Grid.Resources>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="40"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="60"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="2"/>
+    </Grid.RowDefinitions>
+    <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding Command}" />
+    </Grid.GestureRecognizers>
+    <Image x:Name="CachedImage" HeightRequest="40" WidthRequest="40"  Aspect="AspectFill"  Grid.Column="0"/>
+
+    <Label Text="{Binding Text}" FontSize="12" FontFamily="Montserrat-Bold.ttf#Montserrat-Bold"  TextColor="White" Grid.Column="1"  HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" />
+
+    <Label  Text="{Binding Text2,Converter={StaticResource secondsToMinute}}"  FontSize="12" FontFamily="Montserrat-Regular.ttf#Montserrat-Regular" Grid.Column="1" TextColor="White"  HorizontalOptions="End" HorizontalTextAlignment="End" VerticalTextAlignment="Center" />
+    <BoxView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" HeightRequest="1" HorizontalOptions="FillAndExpand" Color="#30F5F5F5"/>
+</Grid>

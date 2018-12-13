@@ -1,0 +1,34 @@
+﻿using Prism.Commands;
+using Prism.Mvvm;
+using Prism.Navigation;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ScrollApp.ViewModels
+{
+    public class LoginPageViewModel : ViewModelBase
+    {
+        public LoginPageViewModel(INavigationService navigationService)
+            :base(navigationService)
+        {
+
+        }
+
+        //public override void OnNavigatedTo(INavigationParameters parameters)
+        //{
+        //    // this simulates autologin
+        //    NavigationService.NavigateAsync("../HomePage");
+
+
+        //}
+
+        public override void OnNavigatingTo(INavigationParameters parameters)
+        {
+            // this simulates autologin
+            NavigationService.NavigateAsync("NavigationPage/HomePage");
+
+
+        }
+    }
+}

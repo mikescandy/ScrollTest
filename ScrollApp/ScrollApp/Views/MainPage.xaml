@@ -6,6 +6,23 @@
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <Label Text="Welcome to Xamarin Forms and Prism!" />
+        <Button Text="Go to Flex page" Command="{Binding OpenFlexPageCommand}" />
+        <CollectionView x:Name="RecentArtists"  ItemsSource="{Binding  Artists}" VerticalOptions="Start" HeightRequest="160" ItemsLayout="{x:Static ListItemsLayout.HorizontalList}" >
+            <CollectionView.ItemTemplate >
+                <DataTemplate >
+                    <Image HeightRequest="60" WidthRequest="60" Source="{Binding .}"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+        <CollectionView x:Name="RecentAlbums" ItemsSource="{Binding  Albums}" VerticalOptions="Start" ItemsLayout="{x:Static ListItemsLayout.HorizontalList}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Image HeightRequest="260" WidthRequest="260" Source="{Binding .}"/>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </StackLayout>
 
 </ContentPage>

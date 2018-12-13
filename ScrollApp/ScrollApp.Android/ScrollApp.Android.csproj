@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1253C2C7-4EEF-4443-ABE3-E44ED46D1900}</ProjectGuid>
+    <ProjectGuid>{05484096-8060-4EB8-A09B-9B5456E6DBA2}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -56,12 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.0.0.8055-pre1" />
-    <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0-prerelease8" />
-    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0-prerelease8" />
-    <PackageReference Include="Xamarin.Android.Support.v4" Version="28.0.0-prerelease8" />
-    <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="28.0.0-prerelease8" />
-    <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="28.0.0-prerelease8" />
-    <PackageReference Include="Prism.DryIoc.Forms" Version="7.1.0.431" />
+    <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0-preview8" />
+    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0-preview8" />
+    <PackageReference Include="Xamarin.Android.Support.v4" Version="28.0.0-preview8" />
+    <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="28.0.0-preview8" />
+    <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="28.0.0-preview8" />
+    <PackageReference Include="Prism.DryIoc.Forms" Version="7.2.0.708-pre" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -69,6 +69,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\MaterialIcons-Regular.ttf" />
+    <AndroidAsset Include="Assets\Montserrat-Bold.ttf" />
+    <AndroidAsset Include="Assets\Montserrat-Regular.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
@@ -94,6 +97,12 @@
       <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
       <Name>ScrollApp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\music.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\cd.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

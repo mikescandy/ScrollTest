@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Frame 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Pollux.Views"
+    x:Class="Pollux.Templates.AlternateAlbumTemplate"
+    FlexLayout.Basis="50%"
+    BackgroundColor="Transparent"
+    Margin="5" Padding="0" CornerRadius="8" HasShadow="True" HeightRequest="150" WidthRequest="150">
+
+    <Grid HeightRequest="150" WidthRequest="150"     BackgroundColor="Transparent">
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding OpenAlbumCommand}" />
+        </Grid.GestureRecognizers>
+        <Image x:Name="CachedImage" HeightRequest="150" WidthRequest="150"  Aspect="AspectFill" />
+        <!--<views:SKGradientCanvasView HeightRequest="150" WidthRequest="150" VerticalOptions="Start"  />-->
+        <Label Margin="10,0,10,10"  Text="{Binding Text}"  FontSize="12" FontFamily="Montserrat-Bold.ttf#Montserrat-Bold" TextColor="White" VerticalOptions="End" LineBreakMode="WordWrap"  />
+    </Grid>
+</Frame>

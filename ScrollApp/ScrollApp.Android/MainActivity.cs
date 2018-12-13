@@ -16,6 +16,8 @@ namespace ScrollApp.Droid
 
             base.OnCreate(bundle);
 
+            Xamarin.Forms.Forms.SetFlags("FastRenderers_Experimental", "CollectionView_Experimental", "Visual_Experimental", "Shell_Experimental");
+
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App(new AndroidInitializer()));
         }

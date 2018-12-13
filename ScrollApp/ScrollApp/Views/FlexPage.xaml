@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:views="clr-namespace:Pollux.Views"
+             xmlns:templates="clr-namespace:Pollux.Templates"
+             prism:ViewModelLocator.AutowireViewModel="True"
+           
+             Visual="Material"
+             Padding="0"
+             x:Class="ScrollApp.Views.FlexPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="album">
+                <templates:AlternateAlbumTemplate/>
+            </DataTemplate>
+            <DataTemplate x:Key="section">
+                <templates:SectionTitleTemplate/>
+            </DataTemplate>
+            <DataTemplate x:Key="song">
+                <templates:SongWithAlbumCoverTemplate/>
+            </DataTemplate>
+            <DataTemplate x:Key="hero">
+                <templates:HeroTemplate />
+            </DataTemplate>
+            <templates:ArtistDataTemplateSelector x:Key="personDataTemplateSelector"
+                AlbumTemplate="{StaticResource album}"
+                PopularSongTemplate="{StaticResource song}"
+                SectionTitleTemplate="{StaticResource section}"
+                HeroTemplate="{StaticResource hero}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid  >
+        <!--<ScrollView x:Name="ScrollView" >-->
+            <Grid>
+            <!--<FlexLayout x:Name="Flex" BindableLayout.ItemTemplateSelector="{StaticResource personDataTemplateSelector}"  BackgroundColor="#222327" BindableLayout.ItemsSource="{Binding Items}"  Direction="Row" Wrap="Wrap" JustifyContent="SpaceEvenly"/>-->
+            <CollectionView x:Name="Flex" ItemTemplate="{StaticResource personDataTemplateSelector}"  BackgroundColor="#222327" ItemsSource="{Binding Items}" />
+        </Grid>
+        <!--</ScrollView>-->
+
+        <views:SKCircleGradientCanvasView VerticalOptions="Start"  HorizontalOptions="Start" WidthRequest="80" HeightRequest="80" />
+        <views:SKCircleGradientCanvasView VerticalOptions="Start"  HorizontalOptions="End" WidthRequest="80" HeightRequest="80" RotationY = "180" />
+
+        <Frame HasShadow="True" x:Name="Fab" BackgroundColor="Purple" CornerRadius="28" HeightRequest="40" WidthRequest="40" VerticalOptions="Start" HorizontalOptions="End" Margin="0,205,0,0">
+            <Label   Text="&#xE037;" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="White" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"  FontSize="40" FontFamily="MaterialIcons-Regular.ttf#Material Icons" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Frame>
+
+        <StackLayout x:Name="Header" Opacity="0" Orientation="Horizontal" HeightRequest="60" HorizontalOptions="FillAndExpand" BackgroundColor="Black" Spacing="20" Padding="37,0,0,0" VerticalOptions="Start">
+            <Image    Source = "{Binding Artist.ImageUrl}" VerticalOptions="Center"  HeightRequest="40" WidthRequest="40" Aspect="AspectFill" />
+            <Label Text="{Binding Artist.Name}" FontFamily="Montserrat-Bold.ttf#Montserrat-Bold" VerticalTextAlignment="Center" VerticalOptions="Center" FontSize="18" HorizontalOptions="FillAndExpand"  TextColor="White" />
+            <Label Margin="0,0,40,0"  Text="&#xE037;" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="White" VerticalOptions="Center"   HorizontalOptions="End"  FontSize="24" FontFamily="MaterialIcons-Regular.ttf#Material Icons" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+        <Label Margin="5,18,0,0" Text="&#xE5C4;"   TextColor="White" VerticalOptions="Start"  HorizontalOptions="Start"  FontSize="26" FontFamily="MaterialIcons-Regular.ttf#Material Icons" >
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding BackCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label Margin="0,18,0,20" Text="&#xE88F;"   TextColor="White" VerticalOptions="Start"  HorizontalOptions="End"  FontSize="26" FontFamily="MaterialIcons-Regular.ttf#Material Icons" >
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding BackCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+    </Grid>
+</ContentPage>
